@@ -1,0 +1,106 @@
+<!DOCTYPE->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BuckyList</title>
+        <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="static/css/home.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+        <script>
+            function addbuckmodal() {
+                document.getElementById("addbuck").style.visibility = 'Visible';
+            };
+            
+            function addbuckmodalclose() {
+                document.getElementById("addbuck").style.visibility = 'Hidden';
+            };
+            function delbuckmodal() {
+                document.getElementById("delbuck").style.visibility = 'Visible';
+            };
+            
+            function delbuckmodalclose() {
+                document.getElementById("delbuck").style.visibility = 'Hidden';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="bar">
+            <img class="logo" src="media/logo.png"/>
+            <button class="logout">LogOut</button>
+        </div>
+        <div class="buckets">
+            <button class="edit" style="float: right; width: auto; height: auto;" onclick='addbuckmodal()'>Add bucketlist item
+            </button>
+            <input class="search" placeholder="Search a bucket list item"/>
+            <hr/>
+            <div class="buckets-container">
+                <div class="bucketitem" style="display: inline-block;">
+                    <div class="inline-block">This is an X bucket list item . Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
+                    <div class="inline-block" style="margin-top: 20px;">
+                    <button class="delete" onclick='delbuckmodal()'>Delete</button>
+                    <button class="edit" onclick='addbuckmodal()'>Edit</button>
+                    <button class="achieved">Mark achieved</button>
+                    </div>
+                </div>
+                <div class="bucketitem" style="display: inline-block;">
+                    <div class="inline-block">This is an X bucket list item . Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
+                    <div class="inline-block" style="margin-top: 20px;">
+                    <button class="delete" onclick='delbuckmodal()'>Delete</button>
+                    <button class="edit" onclick='addbuckmodal()'>Edit</button>
+                    <button class="achieved">Mark achieved</button>
+                    </div>
+                </div>
+                <div class="bucketitem" style="display: inline-block;">
+                    <div class="inline-block">This is an X bucket list item . Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
+                    <div class="inline-block" style="margin-top: 20px;">
+                    <button class="delete" onclick='delbuckmodal()'>Delete</button>
+                    <button class="edit" onclick='addbuckmodal()'>Edit</button>
+                    <button class="achieved">Mark achieved</button>
+                    </div>
+                </div>
+                <div class="bucketitem" style="display: inline-block;">
+                    <div class="inline-block">This is an X bucket list item . Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
+                    <div class="inline-block" style="margin-top: 20px;">
+                    <button class="delete" onclick='delbuckmodal()'>Delete</button>
+                    <button class="edit" onclick='addbuckmodal()'>Edit</button>
+                    <button class="achieved">Mark achieved</button>
+                    </div>
+                </div>
+                <div class="bucketitem" style="display: inline-block;">
+                    <div class="inline-block">This is an X bucket list item . Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
+                    <div class="inline-block" style="margin-top: 20px;">
+                    <button class="delete" onclick='delbuckmodal()'>Delete</button>
+                    <button class="edit" onclick='addbuckmodal()'>Edit</button>
+                    <button class="achieved">Mark achieved</button>
+                    </div>
+                </div>
+            </div>
+            <div id="delbuck">
+                 <div>
+                    <button class="delete" style="float: left;"  onclick='delbuckmodalclose()'>Delete</button>
+                    <button class="achieved" style="float: right;" onclick='addbuckmodalclose()'>Cancel</button>
+                </div>
+            </div>
+            <div id="addbuck">
+                 <div>
+                    <input placeholder="Bucket list item"/>
+                    <button class="delete" onclick='addbuckmodalclose()'>close</button>
+                    <button class="achieved" onclick='addbuckmodalclose()'>Add</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div style="margin-left:100px; display:inline-block;">
+<!--
+            <a>PRIVACY</a>
+            <a>TERMS</a>
+            <a>ABOUT US</a>
+            <a>DEVELOPERS</a>
+-->
+            </div>
+            <p style="display: inline-block; margin-left: 300px; color: #999;">© 2017 BuckyList</p>
+        </footer>
+    </body>
+</html>
