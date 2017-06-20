@@ -7,20 +7,33 @@
         <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="static/css/home.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
+        <script>
+            function addbuckmodal() {
+                document.getElementById("addbuck").style.visibility = 'Visible';
+            };
+            
+            function addbuckmodalclose() {
+                document.getElementById("addbuck").style.visibility = 'Hidden';
+            };
+            function delbuckmodal() {
+                document.getElementById("delbuck").style.visibility = 'Visible';
+            };
+            
+            function delbuckmodalclose() {
+                document.getElementById("delbuck").style.visibility = 'Hidden';
+            }
+        </script>
 
     </head>
-    <body>
+    <body id="body">
         <div class="bar">
             <img class="logo" src="media/logo.png"/>
             <button class="logout">LogOut</button>
         </div>
         <div class="buckets">
-            <div class="round-button" style="float: right;">
-                <div class="round-button-circle">
-                    <a href="#" class="round-button">+
-                    </a>
-                </div>
-            </div>
+                <button class="edit" style="float: right; width: auto; height: auto;" onclick='addbuckmodal()'>Add bucketlist
+                </button>
             <input class="search" placeholder="Search a bucket list"/>
             <hr/>
             <div class="buckets-container">
@@ -28,31 +41,46 @@
                     <div style="margin-left: 70px; font-size: 17px; cursor: pointer;">BucketX</div>
                     <div>This is an X bucket list for my x things I wanna do. Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
                     <hr class="bucketlisthr"/>                  
-                    <button class="delete">Delete</button>
-                    <button class="edit">Edit</button>
+                    <button onclick='delbuckmodal()' class="delete">Delete</button>
+                    <button onclick='addbuckmodal()' class="edit">Edit</button>
                 </div>
                 <div class="bucketlist" style="display: inline-block;">
                     <div style="margin-left: 70px; font-size: 17px; cursor: pointer;">BucketY</div>
                     <div>This is an Y bucket list for my Y things I wanna do. Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
                     <hr class="bucketlisthr"/>                  
-                    <button class="delete">Delete</button>
-                    <button class="edit">Edit</button>
+                    <button onclick='delbuckmodal()' class="delete">Delete</button>
+                    <button onclick='addbuckmodal()' class="edit">Edit</button>
                 </div>
                 <div class="bucketlist" style="display: inline-block;">
                     <div style="margin-left: 70px; font-size: 17px; cursor: pointer;">BucketZ</div>
                     <div>This is an Z bucket list for my Z things I wanna do. Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
                     <hr class="bucketlisthr"/>                  
-                    <button class="delete">Delete</button>
-                    <button class="edit">Edit</button>
+                    <button onclick='delbuckmodal()' class="delete">Delete</button>
+                    <button onclick='addbuckmodal()' class="edit">Edit</button>
                 </div>
                 <div class="bucketlist">
                     <div style="margin-left: 70px; font-size: 17px; cursor: pointer;">BucketZ</div>
                     <div>This is an Z bucket list for my Z things I wanna do. Lorem Ipsum Lorem Ipsum Lorem Ipsum.</div>
                     <hr class="bucketlisthr"/>                  
-                    <button class="delete">Delete</button>
-                    <button class="edit">Edit</button>
+                    <button onclick='delbuckmodal()' class="delete">Delete</button>
+                    <button onclick='addbuckmodal()' class="edit">Edit</button>
                 </div>
-            </div>        
+                <div id="delbuck">
+                     <div>
+                        <button class="delete" style="float: left;"  onclick='delbuckmodalclose()'>Delete</button>
+                        <button class="achieved" style="float: right;" onclick='addbuckmodalclose()'>Cancel</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="addbuck">
+                 <div>
+                    <input placeholder="Bucket list name"/>
+                    <input placeholder="Description"/>
+                    <button class="delete" onclick='addbuckmodalclose()'>close</button>
+                    <button class="achieved" onclick='addbuckmodalclose()'>Create</button>
+                </div>
+            </div>
         </div>
         <footer>
             <div style="margin-left:100px; display:inline-block;">
