@@ -1,5 +1,5 @@
 from flask import Flask
-from flask-login import LoginManger
+from flask_login import LoginManager
 
 database = {}
 
