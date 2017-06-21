@@ -1,5 +1,9 @@
 import unittest
-from bucky.views import *
+from bucky.models import BucketList
 
 class TestBucketList(unittest.TestCase):
-    pass
+    def test_creates_bucketlist(self):
+        test_bucket = BucketList("2017 bucket", "2017 description", 'Oj')
+        self.assertEqual(test_bucket.title, '2017 bucket')
+        self.assertEqual(self.description, '2017 description')
+        self.assertEqual(self.owner, 'Oj')

@@ -1,7 +1,8 @@
 import unittest
-from bucky.views import *
 from bucky.models import User
-from bucky import create_app
 
 class TestUser(unittest.TestCase):
-    pass
+    def test_creates_user(self):
+        test_user = User("Oj", "pass")
+        self.assertEqual(test_user.username, 'Oj')
+        self.assertTrue(test_user.password)
