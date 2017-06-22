@@ -2,10 +2,10 @@ from flask import Blueprint
 
 views = Blueprint('views', __name__)
 
-# from flask_login import current_user
+from flask_login import current_user
 from run import app
 from flask import render_template, redirect, request, url_for, flash
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, logout_user, login_required
 from .models import User, BucketList, BucketListItem
 from .forms import LoginForm, RegistrationForm
 
@@ -39,6 +39,8 @@ def login():
             return redirect(url_for('views.login'))
         print("login unsuccessful")
     print("its not a post")
+    if current_user:
+        return render_template('/')
     return render_template('login.html')
 
 
@@ -50,7 +52,6 @@ def register():
     :return:
     """
     if request.method == 'POST':
-        # client is requesting to post the data to register user
         form = RegistrationForm(request.form, csrf_token = False)
         if True:
             if form.username.data not in app.database:
@@ -68,13 +69,27 @@ def register():
             print("user exists")
         print("user creation unsuccessful")
         flash('Registration unsuccessful!')
-    return render_template('signup.html') #c+lient is requesting for register page so render
+    return render_template('signup.html')
 
-@app.route("/logout")
+# @app.route("/logout")
+# @login_required
+# def logout():
+#     logout_user()
+#     return redirect('/')
+
+
+
+@views.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect('/')
+    # redirect to the login page
+    return redirect(url_for('views.login'))
+
+
+
+
+
 
 
 
