@@ -21,11 +21,11 @@ class TestViews(unittest.TestCase):
         self.assertTrue(response.status_code == 302)
         self.assertTrue(len(self.app.database) == initial_db_size +1)
     
-    # def test_login(self):
-    #     response = self.client.post('/login',
-    #                                 data={'username': 'Oj', 'password': 'pass'})
-    #     self.assertIn(b'Oj', response.data)
-    #     self.assertTrue(response.status_code == 302)
+    def test_login(self):
+        response = self.client.post('/login',
+                                    data={'username': 'Oj', 'password': 'pass'})
+        self.assertIn(b'Oj', response.data)
+        self.assertTrue(response.status_code == 302)
     #
     # def test_logout(self):
     #     response = self.client.get('/logout')
