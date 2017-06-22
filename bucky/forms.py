@@ -1,13 +1,13 @@
-from flask.ext.wtf import Form
-from wtforms import StringField, PasswordField
-from wtforms.validators import Required, username
+from wtforms import Form, StringField, PasswordField
+from wtforms.validators import DataRequired
+from flask_wtf import FlaskForm
 
 
 class LoginForm(Form):
-    username = StringField('username', validators=[Required()])
-    password = PasswordField('Password', validators=[Required()])
+    username = StringField('username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
 
 
 class RegistrationForm(Form):
-    username = StringField('Username', validators=[Required()])
-    password = PasswordField('Password', validators=[Required()])
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
