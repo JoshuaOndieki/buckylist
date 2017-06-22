@@ -3,11 +3,13 @@ from flask_login import LoginManager
 from config import config
 
 database = {}
+current_user = {}
 login_manager = LoginManager()
 
 def create_app(config_name):
     app = Flask(__name__)
     app.database = database
+    app.current_user = current_user
     app.config.from_object(config[config_name])
     login_manager.init_app(app)
 
