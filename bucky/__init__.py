@@ -3,7 +3,7 @@ from flask_login import LoginManager
 from config import config
 
 database = {}
-current_user = {}
+current_user = None
 login_manager = LoginManager()
 
 def create_app(config_name):
