@@ -3,11 +3,11 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     SECRET_KEY = 'secret'
+    WTF_CSRF_ENABLED = False
 
 
 
 class DevelopmentConfig(Config):
-    WTF_CSRF_ENABLED = False
     DEBUG = True
 
 class ProductionConfig(Config):
@@ -15,7 +15,6 @@ class ProductionConfig(Config):
 
 
 class TestingConfig(Config):
-    WTF_CSRF_ENABLED = False
     DEBUG = True
 
 
