@@ -2,6 +2,9 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
+    """
+    Application configuration
+    """
     SECRET_KEY = 'secret'
     WTF_CSRF_ENABLED = False
 
