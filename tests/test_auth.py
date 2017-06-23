@@ -15,12 +15,14 @@ class TestViews(unittest.TestCase):
     def tearDown(self):
         self.app_context.pop()
 
-    def test_register_successful(self):
+    def test_register_and_login_successful(self):
         initial_db_size = len(self.app.database)
-        response = self.client.post('/register',
+        self.client.post('/register',
                                     data={'username': 'Oj', 'password': 'pass'})
-        self.assertTrue(response.status_code == 302, msg='Redirects on success!')
         self.assertTrue(len(self.app.database) == initial_db_size + 1, msg='Registered user should reflect in app database!')
+        response = self.client.post('/login',
+                                    data={'username': 'Oj', 'password': 'pass'})
+        self.assertTrue(response.status_code == 302)
 
     def test_register_duplicate_unsuccessful(self):
         initial_db_size = len(self.app.database)
@@ -31,16 +33,12 @@ class TestViews(unittest.TestCase):
     def test_register_considers_caps_as_duplicate(self):
         initial_db_size = len(self.app.database)
         self.client.post('/register',
-                                    data={'username': 'OJ', 'password': 'another_pass'})
-        self.assertTrue(len(self.app.database) == initial_db_size, msg='Should consider caps as duplicate!')
-
-    def test_login(self):
-        response = self.client.post('/login',
-                                    data={'username': 'Oj', 'password': 'pass'})
-        self.assertTrue(self.app.current_user.username == 'Oj', msg='Should log user in as current_user!')
-        self.assertTrue(response.status_code == 302, msg='Redirects on success!')
+                                    data={'username': 'nocaps', 'password': 'another_pass'})
+        self.assertTrue(len(self.app.database) == initial_db_size + 1, msg='Adds user successfully!')
+        self.client.post('/register',
+                                    data={'username': 'NOCAPS', 'password': 'another_pass'})
+        self.assertTrue(len(self.app.database) == initial_db_size + 1, msg='Should consider caps as duplicate!')
 
     def test_logout(self):
         response = self.client.get('/logout')
-        self.assertTrue(response.status_code == 302, msg='Redirects on success!')
         self.assertTrue(self.app.current_user is None, msg='current_user should be None')
