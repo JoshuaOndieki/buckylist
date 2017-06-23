@@ -8,12 +8,20 @@ class LoginForm(FlaskForm):
     A FlaskForm used to validate login form
     """
     username = StringField('username', validators=[Required()])
-    password = PasswordField('Password', validators=[Required()])
+    password = PasswordField('password', validators=[Required()])
 
 
 class RegistrationForm(FlaskForm):
     """
     A FlaskForm used to validate the registration form
     """
-    username = StringField('Username', validators=[Required()])
-    password = PasswordField('Password', validators=[Required()])
+    username = StringField('username', validators=[Required()])
+    password = PasswordField('password', validators=[Required()])
+
+
+class BucketForm(FlaskForm):
+    """
+    A FlaskForm used to validate the bucket form
+    """
+    name = StringField('name', validators=[Required()])
+    description = StringField('description', validators=[Required()])
