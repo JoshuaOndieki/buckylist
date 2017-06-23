@@ -2,20 +2,56 @@
     <head>
         <title>BuckyList</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+        {% set user = data['user']%}
     </head>
     <body>
         <nav>
             <div class="nav-wrapper">
               <a href="#" class="brand-logo"><img src="../static/media/logo.png" style="height: 65px; width: 65px;"></img></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/logout">Logout {{ current_user.user_id }}</a></li>
+                <li><a href="/logout">Logout {{ user.user_id }}</a></li>
               </ul>
             </div>
         </nav>
 
+        <ul class="collection" style="float: left; width: 40%; height: inherit;">
+          <li class="collection-item avatar">
+            <img src="" alt="item" class="circle">
+            <span class="title">Title</span>
+            <p>First Line <br>
+               Second Line
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <i class="material-icons circle">folder</i>
+            <span class="title">Title</span>
+            <p>First Line <br>
+               Second Line
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <i class="material-icons circle green">insert_chart</i>
+            <span class="title">Title</span>
+            <p>First Line <br>
+               Second Line
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <i class="material-icons circle red">play_arrow</i>
+            <span class="title">Title</span>
+            <p>First Line <br>
+               Second Line
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+</ul>
+
           <ul class="collection" style="float: right; width: 40%; height: inherit;">
             <li class="collection-item avatar">
-              <img src="images/yuna.jpg" alt="" class="circle">
+              <img src="" alt="item" class="circle">
               <span class="title">Title</span>
               <p>First Line <br>
                  Second Line
@@ -53,5 +89,3 @@
     </script>
     </body>
 </html>
-
-

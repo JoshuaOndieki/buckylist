@@ -10,6 +10,7 @@
     </head>
     <body>
         <img class="logo" src="../static/media/logo.png"/>
+        <div class="bucky" style="margin: 0 0 0 550px; height: 64px;"><img src='../static/media/bucky.gif'></img></div>
         <div class = "login-container" style="height: 350px;">
             <div class="row">
                 <form class="col s12" action="/login" method="post">
@@ -30,6 +31,9 @@
                             class="log waves-effect waves-light btn" style="background-color: #db4437;">Sign Up
                     </a>
                 </form>
+                {% for error in data['errors'] %}
+                <p style="color: red;">{{error}}</p>
+                {% endfor %}
             </div>
             <div>
             </div>
