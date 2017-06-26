@@ -1,0 +1,67 @@
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
+.login-container{
+    width: 350px;
+    margin: 0 0 0 500px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    padding: 10px 0;
+}
+
+.bucky{
+  margin: 0 0 0 550px;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    font-size: 12px;
+    display: block;
+}
+
+
+.signup{
+    font-size: 17px;
+    line-height: 20px;
+    margin: 22px auto 8px;
+    text-align: center;
+    color: #999;
+    font-weight: 600;
+    display: block;
+    overflow: hidden;
+}
+
+button{
+    background-color: #3897f0;
+    color: aliceblue;
+    cursor: pointer;
+}
+.log{
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 268px;
+    font-family: "Segoe UI",sans-serif;
+    height: 28px;
+    margin: 10px 40px 10px 40px;
+}

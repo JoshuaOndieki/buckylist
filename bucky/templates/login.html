@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login</title>
+        <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="../static/css/auth.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    </head>
+    <body>
+        <img class="logo" src="../static/media/logo.png"/>
+        <div class="bucky" style="margin: 0 0 0 550px; height: 64px;"><img src='../static/media/bucky.gif'></img></div>
+        <div class = "login-container" style="height: 350px;">
+            <div class="row">
+                <form class="col s12" action="/login" method="post">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="username" name="username" class="validate" required="required">
+                            <label for="username" data-error="error" data-success="ok">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" name="password" type="password" class="validate" required="required">
+                            <label for="password" data-error="error" data-success="ok">Password</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="log waves-effect waves-light btn">Log in</button>
+                    <a href="/register"
+                            class="log waves-effect waves-light btn" style="background-color: #db4437;">Sign Up
+                    </a>
+                </form>
+                {% for error in data['errors'] %}
+                <p style="color: red;">{{error}}</p>
+                {% endfor %}
+            </div>
+            <div>
+            </div>
+        </div>
+        <footer>
+            <div style="margin-left:100px; display:inline-block;">
+            <a>PRIVACY</a>
+            <a>TERMS</a>
+            <a>ABOUT US</a>
+            <a>DEVELOPERS</a>
+            </div>
+            <p style="display: inline-block; margin-left: 300px; color: #999;">© 2017 BuckyList</p>
+        </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    </body>
+</html>

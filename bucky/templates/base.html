@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>BuckyList</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+        {% set user = data['user']%}
+        {% set user_db = data['db'] %}
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo"><img src="../static/media/logo.png" style="height: 65px; width: 65px;"></img></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/logout">Logout {{ user.username }}</a></li>
+              </ul>
+            </div>
+        </nav>
+
+        <ul class="collection" style="float: left; width: 40%; height: inherit;">
+          {% if user_db %}
+          {% for bucket in user_db %}
+          <li class="collection-item avatar">
+            <img src="" alt="bucket" class="circle">
+            <span class="title">bucket.title</span>
+            <p>bucket.description</p>
+          </li>
+          {% endfor %}
+          {% else %}
+          <li class="collection-item avatar">
+            <img src="" alt="item" class="circle">
+            <span class="title">You have no bucketlists</span>
+          </li>
+          {% endif %}
+</ul>
+
+          <ul class="collection" style="float: right; width: 40%; height: inherit;">
+<p>Bucket items display here</p>
+  </ul>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js">
+    </script>
+    </body>
+</html>
